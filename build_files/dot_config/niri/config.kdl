@@ -44,7 +44,7 @@ input {
 
     mouse {
         // off
-        // natural-scroll
+        natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
         // scroll-method "no-scroll"
@@ -371,7 +371,6 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+D { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
@@ -634,7 +633,8 @@ binds {
     Mod+MouseMiddle { close-window; }
 
     Mod+E { spawn "nautilus"; }
-    Mod+Return { spawn "kitty"; }
+    Mod+Return { spawn "alacritty"; }
+	Mod+B {spawn "brave-origin"}
 }
 include "dms/binds.kdl"
 
