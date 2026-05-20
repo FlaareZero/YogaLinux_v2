@@ -8,6 +8,9 @@ FROM registry.gitlab.com/origami-linux/images/origami:latest
 LABEL ostree.bootc=1
 LABEL containers.bootc=1
 
+LABEL org.opencontainers.image.base.name="fedora"
+LABEL org.opencontainers.image.base.digest=""
+
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
 # FROM ghcr.io/ublue-os/bluefin-nvidia:stable
