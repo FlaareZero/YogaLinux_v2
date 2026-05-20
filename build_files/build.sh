@@ -71,10 +71,6 @@ sudo mv /etc/profile.d/origami-aliases.sh /etc/profile.d/origami-aliases.sh.bak
 # Remove COSMIC shell and waybar
 dnf -y remove cosmic-comp cosmic-initial-setup cosmic-settings cosmic-settings-daemon cosmic-store  waybar
 
-# Install Brave Origin
-
-curl -fsSLo /etc/yum.repos.d/brave-browser-nightly.repo https://brave-browser-rpm-nightly.s3.brave.com/brave-browser-nightly.repo
-dnf install -y brave-origin-nightly
 
 ## CLEAN UP
 # Clean up dnf cache to reduce image size
