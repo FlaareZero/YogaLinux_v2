@@ -69,7 +69,7 @@ systemctl enable podman.socket
 sudo mv /etc/profile.d/origami-aliases.sh /etc/profile.d/origami-aliases.sh.bak
 
 # Remove COSMIC shell and waybar
-dnf -y remove cosmic-comp cosmic-initial-setup cosmic-settings cosmic-settings-daemon cosmic-store waybar cosmic-text cosmic-files
+dnf -y remove cosmic-comp cosmic-initial-setup cosmic-settings cosmic-settings-daemon cosmic-store waybar cosmic-text cosmic-files cosmic-screenshot cosmic-camera cosmic-player
 
 
 ## CLEAN UP
