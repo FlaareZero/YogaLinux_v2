@@ -1,4 +1,4 @@
-export image_name := env("IMAGE_NAME", "yogalinuxos") # output image name, usually same as repo name, change as needed
+export image_name := env("IMAGE_NAME", "yogalinuxos") 
 export default_tag := env("DEFAULT_TAG", "latest")
 export bib_image := env("BIB_IMAGE", "quay.io/centos-bootc/bootc-image-builder:latest")
 
@@ -42,7 +42,7 @@ clean:
     rm -f previous.manifest.json
     rm -f changelog.md
     rm -f output.env
-    rm -rf output/
+    rm -f output/
 
 # Sudo Clean Repo
 [group('Utility')]
@@ -312,7 +312,7 @@ format:
     set -eoux pipefail
     # Check if shfmt is installed
     if ! command -v shfmt &> /dev/null; then
-        echo "shfmt could not be found. Please install it."
+        echo "shellcheck could not be found. Please install it."
         exit 1
     fi
     # Run shfmt on all Bash scripts
