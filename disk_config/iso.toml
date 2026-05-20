@@ -1,5 +1,4 @@
-[distro]
-name = "fedora"
+distro = "fedora"
 
 [[customizations.filesystem]]
 mountpoint = "/"
