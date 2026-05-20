@@ -74,7 +74,7 @@ dnf -y remove cosmic-comp cosmic-initial-setup cosmic-settings cosmic-settings-d
 # Install Brave Origin
 
 curl -fsSLo /etc/yum.repos.d/brave-browser-nightly.repo https://brave-browser-rpm-nightly.s3.brave.com/brave-browser-nightly.repo
-dnf install brave-origin-nightly
+dnf install -y brave-origin-nightly
 
 ## CLEAN UP
 # Clean up dnf cache to reduce image size
