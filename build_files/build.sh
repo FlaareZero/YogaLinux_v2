@@ -66,6 +66,25 @@ cp -rf /ctx/dot_config/niri/config.kdl /etc/skel/.config/niri/
 
 # dnf -y install bitwarden-cli 
 
+# Pre-configure Flathub remote on first boot
+cat > /etc/systemd/system/flathub-setup.service << EOF
+[Unit]
+Description=Add Flathub Flatpak remote
+After=network-online.target
+Wants=network-online.target
+ConditionPathExists=!/var/lib/flatpak/repo/flathub.trustedkeys.gpg
+
+[Service]
+Type=oneshot
+ExecStart=flatpak remote-add --if-not-exists --system flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+systemctl enable flathub-setup.service
+
 #### Enable podman
 
 systemctl enable podman.socket
