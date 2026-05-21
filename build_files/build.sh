@@ -9,7 +9,7 @@ sed -i '/^\[main\]/a max_parallel_downloads=10' /etc/dnf/dnf.conf
 dnf -y install libvirt virt-manager qemu-kvm flatpak-builder wlr-randr iotop sysstat lxqt-openssh-askpass lxpolkit
 
 # User apps
-dnf -y install nautilus kitty mpv grim
+dnf -y install nautilus mpv grim
 
 # Brave Origin Beta
 curl -fsSLo /etc/yum.repos.d/brave-browser-beta.repo \
@@ -26,7 +26,7 @@ curl -Lo /etc/yum.repos.d/nautilus-open-any-terminal.repo \
   https://copr.fedorainfracloud.org/coprs/monkeygold/nautilus-open-any-terminal/repo/fedora-$(rpm -E %fedora)/monkeygold-nautilus-open-any-terminal-fedora-$(rpm -E %fedora).repo
 dnf install -y nautilus-open-any-terminal
 glib-compile-schemas /usr/share/glib-2.0/schemas
-gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal kitty
+gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
 
 
 # Install Niri 
