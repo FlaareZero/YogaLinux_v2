@@ -64,6 +64,15 @@ cp -rf /ctx/dot_config/niri/config.kdl /etc/skel/.config/niri/
 # DEV packages
 # cargo evtest git input-remapper libevdev-devel libinput-utils python3-devel
 
+# Bluetooth LDAC config
+mkdir -p /etc/skel/.config/wireplumber/wireplumber.conf.d/
+cat > /etc/skel/.config/wireplumber/wireplumber.conf.d/bluetooth-ldac.conf << 'EOF'
+monitor.bluez.properties = {
+    # Fix cuffie BT da CachyOS
+    ["bluez5.ldac-hq-mode"] = "auto"
+}
+EOF
+
 # dnf -y install bitwarden-cli 
 
 # Pre-configure Flathub remote on first boot
