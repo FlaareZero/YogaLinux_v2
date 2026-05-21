@@ -634,7 +634,7 @@ binds {
 
     Mod+E { spawn "nautilus"; }
     Mod+Return { spawn "alacritty"; }
-	Mod+B {spawn "brave-origin"}
+	Mod+B {spawn "brave-origin"; }
 }
 include "dms/binds.kdl"
 
