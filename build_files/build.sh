@@ -11,6 +11,12 @@ dnf -y install libvirt virt-manager qemu-kvm flatpak-builder wlr-randr iotop sys
 # User apps
 dnf -y install nautilus kitty mpv flameshot
 
+# Brave Origin Beta
+curl -fsSLo /etc/yum.repos.d/brave-browser-beta.repo \
+  https://brave-browser-rpm-beta.s3.brave.com/brave-browser-beta.repo
+
+dnf install -y brave-origin-beta
+
 # OBS and fully-featured ffmpeg with nonfree components from rpm fusion
 dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 dnf -y install ffmpeg x264-libs obs-studio obs-studio-plugin-x264 --allowerasing
