@@ -9,7 +9,7 @@ sed -i '/^\[main\]/a max_parallel_downloads=10' /etc/dnf/dnf.conf
 dnf -y install libvirt virt-manager qemu-kvm flatpak-builder wlr-randr iotop sysstat lxqt-openssh-askpass lxpolkit
 
 # User apps
-dnf -y install nautilus kitty mpv flameshot
+dnf -y install nautilus kitty mpv flameshot grim
 
 # Brave Origin Beta
 curl -fsSLo /etc/yum.repos.d/brave-browser-beta.repo \
@@ -71,6 +71,12 @@ monitor.bluez.properties = {
     # Fix cuffie BT da CachyOS
     ["bluez5.ldac-hq-mode"] = "auto"
 }
+EOF
+# Setup Flameshot with grim
+mkdir -p /etc/skel/.config/flameshot/
+cat > /etc/skel/.config/flameshot/flameshot.ini << 'EOF'
+[General]
+useGrimAdapter=true
 EOF
 
 # dnf -y install bitwarden-cli 
